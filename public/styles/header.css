@@ -1,0 +1,38 @@
+body > header {
+  /* background-color: #d89924;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png"); */
+  background-color: #d89924;
+background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+
+  height: 500px;
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  padding-top: 120px;
+}
+
+body > header .img {
+   border: 1px solid blue;
+}
+
+
+body > header .name {
+  border: 1px solid blue;
+}
+
+body > header .name > .text {
+  margin: 0;
+}
+
+.first, .last {
+  font-size: 2em;
+}
+
+.first {
+  font-weight: bold;
+}
