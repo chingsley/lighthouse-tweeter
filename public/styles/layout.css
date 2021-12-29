@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -24,3 +26,9 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.container {
+  border: 1px dashed orange;
+  width: 90%;
+  margin: 0 auto;
+}
