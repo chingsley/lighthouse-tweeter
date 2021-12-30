@@ -57,8 +57,17 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <h1>this is the main container</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, temporibus rerum quidem modi reiciendis explicabo quibusdam inventore. Velit hic excepturi provident ducimus necessitatibus consequatur assumenda voluptatum, mollitia, obcaecati exercitationem nulla!</p>
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form>
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
   </main>
 </body>
 
