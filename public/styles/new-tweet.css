@@ -1,0 +1,43 @@
+.new-tweet {
+  border: 1px solid red;
+  margin-top: 2rem;
+}
+
+.form-tweet {
+  /* font-family: 'Bungee', cursive; */
+  border: 1px solid red;
+  position: relative;
+}
+
+.form-label {
+  border: 1px solid lightblue;
+  display: block;
+  position: absolute;
+}
+
+.form-textarea {
+  border: 1px solid blue;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.7);
+  background-color: transparent;
+  height: 2.5rem;
+}
+
+.btn-counter {
+border: 1px solid grey;
+margin-top: 1rem;
+}
+
+.form-btn {
+  padding: 0.1em 1rem;
+ background: #4056A1;
+ color: white;
+}
+
+.form-counter {
+  font: bold;
+  border: 1px solid blue;
+  float: right;
+}
