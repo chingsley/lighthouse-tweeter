@@ -1,22 +1,23 @@
 .new-tweet {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin-top: 2rem;
 }
 
 .form-tweet {
-  /* font-family: 'Bungee', cursive; */
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: relative;
 }
 
 .form-label {
-  border: 1px solid lightblue;
+  /* border: 1px solid lightblue; */
   display: block;
-  position: absolute;
+  font-weight: bold;
+  /* position: absolute; */
 }
 
 .form-textarea {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
+  outline: none;
   display: block;
   width: 100%;
   border: none;
@@ -26,18 +27,24 @@
 }
 
 .btn-counter {
-border: 1px solid grey;
+/* border: 1px solid grey; */
 margin-top: 1rem;
 }
 
 .form-btn {
+  font-family: 'Bungee', cursive;
   padding: 0.1em 1rem;
  background: #4056A1;
  color: white;
 }
 
 .form-counter {
+  /* border: 1px solid blue; */
+  font-family: 'Bungee', cursive;
   font: bold;
-  border: 1px solid blue;
   float: right;
+}
+
+.error-color {
+  color: red;
 }
