@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -67,6 +68,32 @@
           <output class="form-counter" name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+    <section class="tweet-container">
+      <article class="tweet">
+        <header>
+          <div class="left profile">
+            <img src="https://i.imgur.com/73hZDYK.png" class="usericon">  
+            <span class="uname">Newton</span>
+          </div>
+          <div class="right uhandle">
+            @Isaac
+          </div>
+        </header>
+        <div class="body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam deserunt fugiat blanditiis illum nihil. Officiis tenetur tempora totam. Quis voluptatum obcaecati unde voluptatibus reiciendis saepe nostrum tenetur quo vitae repellat?
+        </div>
+        <footer>
+          <span class="left timeago">
+            10 days ago
+          </span>
+          <span class="right icons">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+          </span>
+        </footer>
+      </article>
     </section>
   </main>
   <script src="scripts/composer-char-counter.js"></script>
