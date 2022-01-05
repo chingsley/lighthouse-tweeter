@@ -1,0 +1,67 @@
+.tweet-container {
+  /* border: 1px dashed blueviolet; */
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+article.tweet {
+  border: 0.3rem solid #545149;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+article.tweet:hover {
+  box-shadow: 5px 5px #c9cae2;
+  transition: linear 0.2s;
+}
+
+article.tweet .body {
+  margin: 1.5rem 0;
+}
+
+article.tweet header {
+  /* border: 1px solid salmon; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article.tweet header > .profile {
+  /* border: 1px dashed darkmagenta; */
+  display: flex;
+  align-items: center;
+}
+
+article.tweet header > .profile > .uname {
+  margin-left: 1rem;
+}
+
+article.tweet header > .uhandle {
+  color: #c5cbe3;
+  font-weight: bold;
+}
+
+article.tweet footer {
+  border-top: 0.3rem solid #545149;
+  /* border: 1px solid red; */
+  padding-top: 1rem;
+}
+
+article.tweet footer > .right {
+  /* border: 1px solid red; */
+  float: right;
+}
+
+article.tweet footer > .right > .fas {
+  color: #4056a1;
+}
+
+article.tweet footer > .right > .fas:hover {
+  cursor: pointer;
+  color: #c99926;
+  transition: linear 0.2s;
+}
+
+article.tweet footer > .right > .fas:not(:first-child):not(:last-child) {
+  margin: 0 0.5rem;
+}
