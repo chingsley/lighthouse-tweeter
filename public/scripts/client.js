@@ -4,31 +4,27 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
+
+const showError = function (errDisplay, txt) {
+  errDisplay.slideDown().text(txt);
+  errDisplay.css("display", "block");
+};
+const hideError = function (errDisplay) {
+  errDisplay.slideUp();
+  errDisplay.css("display", "none");
+};
+
+const listenForTextChange = function (errDisplay) {
+  $(".form-textarea").change(function () {
+    hideError(errDisplay);
+  });
+};
+
+const escapeText = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const renderTweets = function (tweets) {
   let tweetsContainer = $('.tweet-container').html('');
@@ -52,7 +48,7 @@ const createTweetElement = function (tweetData) {
     </div>
   </header>
   <div class="body">
-    ${tweetData.content.text}
+    ${escapeText(tweetData.content.text)}
   </div>
   <footer>
     <span class="left timeago">
@@ -70,16 +66,59 @@ const createTweetElement = function (tweetData) {
 };
 
 
-renderTweets(data);
+const validateTweet = function (tweetText) {
+  if (tweetText.length === 0) {
+    return "Can't submit an empty tweet";
+  } else if (tweetText.length > 140) {
+    return "Tweet length must be less than 140 characters";
+  }
+  return null;
+};
+
 
 $(document).ready(function () {
-  renderTweets(data);
+  const errDisplay = $(".new-tweet-error");
+
+  $('.btn-compose-tweet').click(function () {
+    var $section = $('section.new-tweet');
+
+    if ($section.is(':visible')) {
+      $section.slideUp('fast');
+    } else {
+      $section.slideDown('fast');
+      $section.find('textarea').focus();
+    }
+  });
+
 
   $("#form-tweet").submit(function (event) {
     // console.log($(this).serialize());
     event.preventDefault();
-    $.post("/tweets", $(this).serialize(), function (response) {
-      console.log("response = ", response);
+
+    const tweetText = $("#tweet-text").val();
+    const error = validateTweet(tweetText);
+    if (error) {
+      return showError(errDisplay, error);
+    }
+
+    $.post("/tweets", $(this).serialize(), function () {
+      loadTweets();
+      errDisplay.slideUp();
+      // document.getElementById('tweet-text').value = '';
+      $("#tweet-text").val("");
+      $(".form-counter").text(140);
     });
   });
+
+  function loadTweets() {
+    // not expecting use of promises or for them to understand them at least.
+    $.ajax('/tweets', { method: 'GET', dataType: "json" })
+      .then(function (result) {
+        renderTweets(result);
+      });
+  }
+
+  loadTweets();
+
 });
+

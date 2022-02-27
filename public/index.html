@@ -43,7 +43,9 @@
     </div>
     <div class="navbar__right">
       <span class="navbar__right__text">Write a new tweet</span>
-      <i class="fas fa-angle-double-down"></i>
+      <span class="btn-compose-tweet">
+        <i class="fas fa-angle-double-down"></i>
+      </span>
     </div>
 
   </nav>
@@ -61,6 +63,7 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <div class="new-tweet-error"></div>
       <form method='POST' action='/tweets' class="form-tweet" id="form-tweet">
         <label class="form-label" for="tweet-text">What are you humming about?</label>
         <textarea class="form-textarea" name="text" id="tweet-text"></textarea>
